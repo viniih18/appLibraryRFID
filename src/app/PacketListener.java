@@ -7,8 +7,13 @@ import java.util.logging.Logger;
 import com.fazecast.jSerialComm.SerialPort;
 import com.fazecast.jSerialComm.SerialPortEvent;
 import com.fazecast.jSerialComm.SerialPortPacketListener;
-
-public final class ClassHelp  implements SerialPortPacketListener{
+/**
+ * 
+ * @author mavti
+ *
+ * Implementacao da classe da biblioteca para pegar as informações do RFID 
+ */
+public final class PacketListener  implements SerialPortPacketListener{
 	
 	public int getListeningEvents() {
 		return SerialPort.LISTENING_EVENT_DATA_RECEIVED;
@@ -26,12 +31,12 @@ public final class ClassHelp  implements SerialPortPacketListener{
 		try {
             byteSize = str.getBytes("UTF-8").length;
         } catch (UnsupportedEncodingException ex) {
-            Logger.getLogger(ClassHelp.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PacketListener.class.getName()).log(Level.SEVERE, null, ex);
         }
-		if (byteSize == JSerialCom.PACKET_SIZE_IN_BYTES) {
-            System.out.println("(Tamanho: " + byteSize + ")" + str);
-            System.out.println("Informacao: " + str);
-        }
+		//if (byteSize == JSerialCom.PACKET_SIZE_IN_BYTES) {
+        System.out.println("(Tamanho: " + byteSize + ")" + str);
+        System.out.println("Informacao: " + str);
+        //}
 	}
 	
 
