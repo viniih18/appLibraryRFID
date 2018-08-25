@@ -11,7 +11,7 @@ import com.fazecast.jSerialComm.SerialPortPacketListener;
  * 
  * @author mavti
  *
- * Implementacao da classe da biblioteca para pegar as informações do RFID 
+ * Implementacao da classe da biblioteca para pegar as informações do RFID  
  */
 public final class PacketListener  implements SerialPortPacketListener{
 	
